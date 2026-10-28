@@ -653,28 +653,24 @@
       flex-wrap: wrap;
       align-items: center;
       gap: .6rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.1rem;
     }
 
-    .contact-note { color: var(--muted); font-size: .72rem; }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem 1.75rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid var(--line);
+    .contact-note {
+      margin: 0;
       color: var(--muted);
-      font-size: .8rem;
+      font-size: .72rem;
+      line-height: 1.7;
     }
 
-    .contact-links a {
+    .contact-note a {
+      color: var(--ink);
       text-decoration: none;
       border-bottom: 1px solid var(--line);
-      transition: color .18s ease, border-color .18s ease;
+      transition: border-color .18s ease;
     }
 
-    .contact-links a:hover { color: var(--ink); border-color: var(--ink); }
+    .contact-note a:hover { border-color: var(--ink); }
 
     /* ---------- Footer ---------- */
     .site-footer {
@@ -735,13 +731,12 @@
       .tool-grid { grid-template-columns: 1fr; gap: 1.75rem; }
       .services-grid { grid-template-columns: 1fr; }
       .service { padding: 1.2rem 0; }
-      .contact-links { flex-direction: column; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .nav a, .contact-links a, .footer-links a { transition: none; }
+      .btn, .nav a, .contact-note a, .footer-links a { transition: none; }
     }
 
     /* ---------- Print ---------- */
@@ -773,7 +768,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn btn-sm" href="mailto:justineusmanp@gmail.com">Get in touch</a>
+      <a class="btn btn-sm" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Project%20Inquiry" target="_blank" rel="noopener">Get in touch</a>
     </div>
   </header>
 
@@ -786,7 +781,7 @@
           <p class="role">Administrative Assistant &amp; AI Video Generator</p>
           <p class="intro">General Virtual Assistant with a background in customer service, sales, and social media coordination. I help businesses stay organized, run smoother day-to-day operations, and create polished AI-powered video content.</p>
           <div class="actions">
-            <a class="btn" href="mailto:justineusmanp@gmail.com">Email me</a>
+            <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Project%20Inquiry" target="_blank" rel="noopener">Email me</a>
             <a class="btn btn-secondary" href="#services">View services</a>
           </div>
           <dl class="facts">
@@ -1013,7 +1008,7 @@
                 <li>Ideal for one-time projects</li>
                 <li>Administrative tasks</li>
               </ul>
-              <a class="btn btn-secondary" href="mailto:justineusmanp@gmail.com?subject=Hourly%20Support%20Inquiry">Choose hourly</a>
+              <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Hourly%20Support%20Inquiry" target="_blank" rel="noopener">Choose hourly</a>
             </article>
 
             <article class="plan featured">
@@ -1028,7 +1023,7 @@
                 <li>Assistance with administrative tasks, product updates, customer service, and reporting</li>
                 <li>Regular communication and progress updates</li>
               </ul>
-              <a class="btn" href="mailto:justineusmanp@gmail.com?subject=Part-Time%20Support%20Inquiry">Choose part-time</a>
+              <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Part-Time%20Support%20Inquiry" target="_blank" rel="noopener">Choose part-time</a>
             </article>
 
             <article class="plan">
@@ -1042,7 +1037,7 @@
                 <li>Administrative tasks, customer support, product maintenance, and operational tasks</li>
                 <li>Integrated into your workflow as a dedicated team member</li>
               </ul>
-              <a class="btn btn-secondary" href="mailto:justineusmanp@gmail.com?subject=Dedicated%20Support%20Inquiry">Choose dedicated</a>
+              <a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Dedicated%20Support%20Inquiry" target="_blank" rel="noopener">Choose dedicated</a>
             </article>
           </div>
         </div>
@@ -1082,14 +1077,11 @@
           <h2>Let's work together.</h2>
           <p>Have a project, a backlog, or a content calendar that needs a hand? Send me a note and I'll get back to you.</p>
           <div class="contact-actions">
-            <a class="btn" href="mailto:justineusmanp@gmail.com">justineusmanp@gmail.com</a>
-            <span class="contact-note">Open to remote work worldwide</span>
+            <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Project%20Inquiry" target="_blank" rel="noopener">Email via Gmail</a>
+            <a class="btn btn-secondary" href="https://instagram.com/kozocx" target="_blank" rel="noopener">Instagram — @kozocx</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/search/top?q=Justine%20Usman" target="_blank" rel="noopener">Facebook — Justine Usman</a>
           </div>
-          <div class="contact-links">
-            <a href="https://instagram.com/kozocx" target="_blank" rel="noopener">Instagram — @kozocx</a>
-            <span>Facebook — Justine Usman</span>
-            <a href="mailto:justineusmanp@gmail.com">Email — justineusmanp@gmail.com</a>
-          </div>
+          <p class="contact-note">Direct email: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=justineusmanp@gmail.com&amp;su=Project%20Inquiry" target="_blank" rel="noopener">justineusmanp@gmail.com</a> · Open to remote work worldwide</p>
         </div>
       </div>
     </section>
