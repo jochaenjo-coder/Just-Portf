@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Justine Usman — Administrative Assistant &amp; AI Video Generator</title>
+  <meta name="description" content="Justine Usman is a General Virtual Assistant offering administrative support, AI video generation, social media support, and technical support.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23245246'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='27' fill='%23f5f1e8' text-anchor='middle'%3EJU%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    :root {
+      --paper: #f5f1e8;
+      --paper-2: #ece5d8;
+      --card: #fbf8f2;
+      --ink: #19211d;
+      --muted: #5d665f;
+      --line: rgba(25, 33, 29, .14);
+      --green: #245246;
+      --green-2: #2f6a5a;
+      --green-soft: #dfe8e1;
+      --gold: #c49a63;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --radius: 22px;
+      --wrap: 1120px;
+      --shadow: 0 30px 60px -35px rgba(25, 33, 29, .4);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 12% -5%, rgba(255, 255, 255, .75), transparent 48%),
+        radial-gradient(ellipse at 95% 8%, rgba(47, 106, 90, .09), transparent 32%),
+        var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: var(--green); color: #f7f3ea; }
+
+    a { color: inherit; }
+
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(var(--wrap), calc(100% - 3rem));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -60px;
+      z-index: 100;
+      padding: .7rem 1rem;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .85rem;
+      text-decoration: none;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    :focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 241, 232, .82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .92rem;
+      letter-spacing: .01em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(150deg, var(--green-2), #17382f);
+      color: #f7f3ea;
+      font-family: var(--serif);
+      font-size: 1rem;
+      letter-spacing: .02em;
+    }
+
+    .nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover { color: var(--ink); }
+
+    .header-inner .btn { margin-left: .25rem; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .85rem 1.35rem;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      background: var(--green);
+      color: #f7f3ea;
+      font-family: var(--sans);
+      font-size: .9rem;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      background: #1b4137;
+      border-color: #1b4137;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px -14px rgba(25, 33, 29, .6);
+    }
+
+    .btn svg { flex: none; }
+
+    .btn-small { padding: .7rem 1.1rem; font-size: .84rem; }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(25, 33, 29, .05);
+      border-color: var(--ink);
+      box-shadow: none;
+    }
+
+    .btn-light {
+      background: #f7f3ea;
+      border-color: #f7f3ea;
+      color: var(--green);
+    }
+
+    .btn-light:hover {
+      background: #fffdf8;
+      border-color: #fffdf8;
+      color: var(--green);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .5rem;
+      color: var(--green);
+      font-weight: 600;
+      font-size: .92rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(36, 82, 70, .35);
+      padding-bottom: 2px;
+      transition: gap .2s ease, border-color .2s ease;
+    }
+    .text-link:hover { gap: .65rem; border-color: var(--green); }
+
+    /* ---------- Shared section styles ---------- */
+    .section { padding-block: clamp(4rem, 8vw, 6.5rem); }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(236, 229, 216, .65), rgba(236, 229, 216, .25));
+      border-block: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: clamp(2.4rem, 5vw, 3.6rem);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 450;
+      font-size: clamp(2.2rem, 4.4vw, 3.5rem);
+      line-height: 1.06;
+      letter-spacing: -.025em;
+      text-wrap: balance;
+    }
+
+    .section-head h2 em {
+      font-style: italic;
+      font-weight: 350;
+      color: var(--green);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin: 0;
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .eyebrow .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green-2);
+      box-shadow: 0 0 0 4px rgba(47, 106, 90, .12);
+    }
+
+    .section-head .eyebrow { padding-top: .55rem; }
+
+    .mini-label {
+      margin: 0 0 .7rem;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr);
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+      padding-block: clamp(3.5rem, 7vw, 6.5rem);
+    }
+
+    .hero h1 {
+      margin: .9rem 0 1.1rem;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 7.4vw, 6.4rem);
+      font-weight: 420;
+      line-height: .94;
+      letter-spacing: -.04em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 320;
+      color: var(--green);
+    }
+
+    .hero-role {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .hero-role span { color: var(--gold); padding-inline: .25rem; }
+
+    .lede {
+      max-width: 33rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.1rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 2rem 0 2.4rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem 2.4rem;
+      margin: 0;
+      padding: 1.35rem 0 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta li { display: flex; flex-direction: column; gap: .1rem; }
+
+    .hero-meta span {
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-meta strong { font-weight: 500; color: var(--ink); font-size: .84rem; }
+
+    .hero-card {
+      position: relative;
+      padding: .65rem;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 16px -16px -16px 16px;
+      z-index: -1;
+      border: 1px solid rgba(36, 82, 70, .32);
+      border-radius: 28px;
+    }
+
+    .portrait {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 4.55;
+      border-radius: 21px;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(255, 255, 255, .16), transparent 38%),
+        radial-gradient(circle at 12% 92%, rgba(0, 0, 0, .2), transparent 46%),
+        linear-gradient(155deg, #34715f, #1b4036 58%, #122c25);
+      color: #f4efe4;
+    }
+
+    .portrait img {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .portrait-fallback::before,
+    .portrait-fallback::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(244, 239, 228, .2);
+      pointer-events: none;
+    }
+
+    .portrait-fallback::before { width: 74%; aspect-ratio: 1; }
+    .portrait-fallback::after { width: 96%; aspect-ratio: 1; border-color: rgba(244, 239, 228, .1); }
+
+    .portrait-initials {
+      position: relative;
+      font-family: var(--serif);
+      font-size: clamp(4.5rem, 9vw, 7rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .portrait-fallback p {
+      position: relative;
+      margin: 0;
+      color: rgba(244, 239, 228, .72);
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      line-height: 1.8;
+    }
+
+    .portrait-tag {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .45rem .75rem;
+      border: 1px solid rgba(244, 239, 228, .28);
+      border-radius: 999px;
+      background: rgba(18, 44, 37, .55);
+      backdrop-filter: blur(6px);
+      color: rgba(244, 239, 228, .92);
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .portrait-tag .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #b9e0c6;
+      box-shadow: 0 0 0 3px rgba(185, 224, 198, .18);
+    }
+
+    .card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .85rem .5rem .35rem;
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .card-foot strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Toolkit strip ---------- */
+    .strip {
+      border-block: 1px solid var(--line);
+      background: rgba(251, 248, 242, .55);
+    }
+
+    .strip-inner {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .75rem 1.5rem;
+      padding-block: 1.15rem;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .strip-label { color: var(--green); }
+
+    .strip-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.1rem;
+    }
+
+    .strip-items span { white-space: nowrap; }
+
+    .strip-items span + span::before {
+      content: "·";
+      margin-right: 1.1rem;
+      color: rgba(25, 33, 29, .3);
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: start;
+    }
+
+    .about-copy p {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .about-copy .lead {
+      color: var(--ink);
+      font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+      line-height: 1.65;
+      letter-spacing: -.01em;
+    }
+
+    .education-card {
+      padding: 1.9rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 18px 40px -32px rgba(25, 33, 29, .45);
+    }
+
+    .education-card h3 {
+      margin: 0 0 .3rem;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -.015em;
+    }
+
+    .education-card .years {
+      margin: 0 0 1rem;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .education-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .education-card .rule {
+      height: 1px;
+      margin: 1.5rem 0;
+      background: var(--line);
+    }
+
+    .education-card .now {
+      margin-bottom: .2rem;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: .92rem;
+    }
+
+    /* ---------- Chips ---------- */
+    .chip-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .chips li {
+      padding: .48rem .95rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(251, 248, 242, .7);
+      color: var(--ink);
+      font-size: .82rem;
+      line-height: 1.4;
+      transition: border-color .2s ease, color .2s ease, background .2s ease;
+    }
+
+    .chips li:hover {
+      border-color: rgba(36, 82, 70, .45);
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    /* ---------- Experience ---------- */
+    .timeline { border-bottom: 1px solid var(--line); }
+
+    .job {
+      display: grid;
+      grid-template-columns: 215px minmax(0, 1fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      padding: clamp(1.8rem, 4vw, 2.6rem) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .job-meta { display: flex; flex-direction: column; gap: .35rem; padding-top: .2rem; }
+
+    .job-period {
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+
+    .job-place {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .job h3 {
+      margin: 0 0 .25rem;
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -.015em;
+    }
+
+    .job-company {
+      margin: 0 0 1rem;
+      color: var(--green);
+      font-size: .84rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .job ul {
+      margin: 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .job li { margin: .35rem 0; padding-left: .15rem; }
+    .job li::marker { color: var(--green-2); }
+
+    /* ---------- Process ---------- */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .step {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .step-num {
+      display: block;
+      margin-bottom: 1.6rem;
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--green);
+      opacity: .85;
+    }
+
+    .step h3 {
+      margin: 0 0 .5rem;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -.015em;
+      text-wrap: balance;
+    }
+
+    .step p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    /* ---------- Services ---------- */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .service {
+      padding: clamp(1.7rem, 3vw, 2.3rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-3px);
+      border-color: rgba(36, 82, 70, .3);
+      box-shadow: 0 24px 45px -34px rgba(25, 33, 29, .5);
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.4rem;
+      border-radius: 13px;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .service h3 {
+      margin: 0 0 .6rem;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -.015em;
+    }
+
+    .service p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.7; }
+
+    /* ---------- Packages ---------- */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .plan {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .plan-name {
+      margin: 0 0 1.3rem;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .plan-price {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .plan-price span {
+      margin-left: .25rem;
+      font-family: var(--sans);
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--muted);
+    }
+
+    .plan-note {
+      margin: .45rem 0 1.6rem;
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    .plan ul {
+      display: grid;
+      gap: .7rem;
+      margin: 0 0 2rem;
+      padding: 1.4rem 0 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.55;
+    }
+
+    .plan li { position: relative; padding-left: 1.1rem; }
+
+    .plan li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .58em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green-2);
+      opacity: .65;
+    }
+
+    .plan .btn { margin-top: auto; width: 100%; }
+
+    .plan-featured {
+      color: #f7f3ea;
+      border-color: transparent;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(255, 255, 255, .13), transparent 42%),
+        linear-gradient(160deg, #32705f, #1a4036 60%, #14342b);
+      box-shadow: 0 28px 55px -34px rgba(20, 52, 43, .9);
+    }
+
+    .plan-featured .plan-name,
+    .plan-featured .plan-note,
+    .plan-featured ul { color: rgba(247, 243, 234, .7); }
+
+    .plan-featured .plan-price span { color: rgba(247, 243, 234, .65); }
+
+    .plan-featured ul { border-top-color: rgba(247, 243, 234, .22); }
+
+    .plan-featured li::before { background: #cfe4d5; opacity: .9; }
+
+    .plan-badge {
+      align-self: flex-start;
+      margin-bottom: 1.15rem;
+      padding: .32rem .7rem;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #1b2a24;
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- References ---------- */
+    .refs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .ref {
+      padding: 1.7rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .ref-top { display: flex; align-items: center; gap: .85rem; margin-bottom: 1.1rem; }
+
+    .ref-initials {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: .95rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+
+    .ref h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .ref-role {
+      margin: .15rem 0 0;
+      color: var(--muted);
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .ref a {
+      display: inline-block;
+      color: var(--green);
+      font-size: .8rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(36, 82, 70, .3);
+      overflow-wrap: anywhere;
+    }
+
+    .ref a:hover { border-color: var(--green); }
+
+    /* ---------- Contact ---------- */
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2.5rem, 6vw, 4.5rem);
+      border-radius: 30px;
+      color: #f7f3ea;
+      background:
+        radial-gradient(circle at 88% 4%, rgba(255, 255, 255, .14), transparent 34%),
+        radial-gradient(circle at 6% 100%, rgba(196, 154, 99, .2), transparent 36%),
+        linear-gradient(150deg, #2f6a5a, #173a31 62%, #122d26);
+    }
+
+    .contact-panel::before,
+    .contact-panel::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(247, 243, 234, .12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .contact-panel::before {
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: -190px;
+    }
+
+    .contact-panel::after {
+      width: 620px;
+      height: 620px;
+      right: -250px;
+      top: -290px;
+    }
+
+    .contact-panel .eyebrow { color: rgba(247, 243, 234, .68); }
+    .contact-panel .eyebrow .dot { background: #b9e0c6; box-shadow: 0 0 0 4px rgba(185, 224, 198, .14); }
+
+    .contact-panel h2 {
+      margin: 1rem 0 1.1rem;
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+      font-weight: 380;
+      line-height: 1.02;
+      letter-spacing: -.035em;
+    }
+
+    .contact-panel h2 em { font-style: italic; color: #e6c9a4; }
+
+    .contact-panel > p {
+      position: relative;
+      max-width: 36rem;
+      margin: 0;
+      color: rgba(247, 243, 234, .78);
+      font-size: 1rem;
+    }
+
+    .contact-actions {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0 2.2rem;
+    }
+
+    .contact-actions .btn { font-size: .88rem; }
+
+    .contact-note { font-size: .72rem; color: rgba(247, 243, 234, .55); letter-spacing: .04em; }
+
+    .contact-socials {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(247, 243, 234, .18);
+      font-size: .82rem;
+      color: rgba(247, 243, 234, .7);
+    }
+
+    .contact-socials a {
+      color: #f7f3ea;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(247, 243, 234, .35);
+      transition: border-color .2s ease;
+    }
+
+    .contact-socials a:hover { border-color: #f7f3ea; }
+
+    /* ---------- Footer ---------- */
+    .site-footer { padding: 2rem 0 2.6rem; }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem 2rem;
+      font-size: .74rem;
+      color: var(--muted);
+    }
+
+    .footer-inner p { margin: 0; }
+
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .footer-links a:hover { color: var(--ink); border-color: var(--line); }
+
+    /* ---------- Reveal on scroll ---------- */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1000px) {
+      .plans { grid-template-columns: 1fr; max-width: 560px; }
+      .plan-featured { order: -1; }
+      .steps { grid-template-columns: 1fr; }
+      .steps .step:nth-child(2) { margin-left: 0; }
+    }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .header-inner .btn { margin-left: auto; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-card { width: min(100%, 440px); margin-inline: auto; }
+      .section-head { grid-template-columns: 1fr; gap: .8rem; }
+      .section-head .eyebrow { padding-top: 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .education-card { max-width: 480px; }
+      .job { grid-template-columns: 1fr; gap: .8rem; }
+      .job-meta { flex-direction: row; align-items: baseline; gap: .75rem; }
+      .refs { grid-template-columns: 1fr; }
+      .chip-groups { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 2rem, var(--wrap)); }
+      .brand-text { display: none; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 4.2rem); }
+      .hero-meta { gap: .9rem 1.6rem; }
+      .hero-card::before { inset: 12px -10px -10px 12px; }
+      .strip-items { font-size: .62rem; }
+      .plan { padding: 1.6rem; }
+      .contact-panel { border-radius: 24px; }
+      .contact-socials { flex-direction: column; gap: .6rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .btn, .service, .text-link { transition: none; }
+    }
+
+    /* ---------- Print ---------- */
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      .site-header, .strip, .hero-card, .hero-actions, .contact-socials, .footer-links, .plan-badge { display: none !important; }
+      .hero { display: block; padding: 0 0 1.5rem; }
+      .hero h1 { font-size: 36pt; }
+      .section, .section-alt { padding: 1.2rem 0; background: none; border: 0; }
+      .services, .plans, .refs, .steps { grid-template-columns: 1fr 1fr; }
+      .contact-panel { color: var(--ink); background: none; border: 1px solid #ccc; }
+      .contact-panel > p, .contact-panel .eyebrow { color: var(--muted); }
+      .contact-panel h2 em { color: var(--green); }
+      .contact-panel .btn, .plan .btn { display: none; }
+      .js .reveal { opacity: 1; transform: none; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Justine Usman — back to top">
+        <span class="brand-mark">JU</span>
+        <span class="brand-text">Justine Usman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#references">References</a>
+      </nav>
+      <a class="btn btn-small" href="mailto:justineusmanp@gmail.com">Hire me</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> General Virtual Assistant · Philippines</p>
+        <h1>Justine <em>Usman</em></h1>
+        <p class="hero-role">Administrative Assistant <span>·</span> AI Video Generator</p>
+        <p class="lede">Hello there! I help busy teams stay organized, keep day-to-day operations running smoothly, and turn ideas into polished AI-powered video content.</p>
+        <div class="hero-actions">
+          <a class="btn" href="mailto:justineusmanp@gmail.com">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            Email me
+          </a>
+          <a class="btn btn-ghost" href="#packages">
+            View packages
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <ul class="hero-meta">
+          <li><span>Open to</span><strong>Remote work</strong></li>
+          <li><span>Replies</span><strong>Within 24 hours</strong></li>
+          <li><span>Focus</span><strong>Admin &amp; content</strong></li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <div class="portrait">
+          <img src="portrait.jpg" alt="Portrait of Justine Usman" onerror="this.style.display='none'">
+          <div class="portrait-fallback" aria-hidden="true">
+            <span class="portrait-initials">JU</span>
+            <p>Administrative Assistant<br>&amp; AI Video Generator</p>
+          </div>
+          <span class="portrait-tag"><span class="status-dot"></span> Open for clients</span>
+        </div>
+        <div class="card-foot">
+          <span><strong>Justine Usman</strong> · General VA</span>
+          <span>Davao, PH</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap strip-inner">
+        <span class="strip-label">Daily toolkit</span>
+        <div class="strip-items">
+          <span>Google Workspace</span>
+          <span>Microsoft 365</span>
+          <span>Salesforce</span>
+          <span>Canva</span>
+          <span>CapCut</span>
+          <span>Slack</span>
+          <span>Calendly</span>
+          <span>AI Tools</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section wrap" id="about">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 — About</p>
+        <h2>Organized by nature.<br><em>Reliable by practice.</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="lead">My name is Justine, and I am a Computer Engineering graduate with experience in customer service, sales, outbound calling, appointment setting, social media coordination, and administrative support.</p>
+          <p>I have developed strong skills in communication, organization, data management, and problem-solving through my previous roles. I am also comfortable working with digital tools such as Google Workspace, CRM systems, Canva, and AI-powered productivity tools.</p>
+          <p>As a General Virtual Assistant, I aim to help businesses stay organized, improve their day-to-day operations, and provide reliable administrative and customer support.</p>
+          <a class="text-link" href="#contact">Let's work together
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <aside class="education-card reveal">
+          <p class="mini-label">Education</p>
+          <h3>BS in Computer Engineering</h3>
+          <p class="years">2021 — 2025</p>
+          <p>Sultan Kudarat State University<br>Philippines</p>
+          <div class="rule" aria-hidden="true"></div>
+          <p class="mini-label">Currently</p>
+          <p class="now">General Virtual Assistant</p>
+          <p>Administrative support · AI video · Social media</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="toolkit">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">02 — Toolkit</p>
+          <h2>Tools I work with.<br><em>Skills I bring.</em></h2>
+        </div>
+        <div class="chip-groups">
+          <div class="reveal">
+            <p class="mini-label">Tools</p>
+            <ul class="chips">
+              <li>Google Workspace</li>
+              <li>Microsoft 365</li>
+              <li>Google Drive</li>
+              <li>Canva</li>
+              <li>CapCut</li>
+              <li>CRM</li>
+              <li>Salesforce</li>
+              <li>Calendly</li>
+              <li>Slack</li>
+              <li>AI Tools</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <p class="mini-label">Skills</p>
+            <ul class="chips">
+              <li>Communication</li>
+              <li>Email Management</li>
+              <li>Data Management</li>
+              <li>Task Management</li>
+              <li>CRM Usage</li>
+              <li>Basic Reporting</li>
+              <li>Social Media</li>
+              <li>Data Entry</li>
+              <li>Photo Editing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="experience">
+      <div class="section-head reveal">
+        <p class="eyebrow">03 — Experience</p>
+        <h2>Where I've <em>made things run.</em></h2>
+      </div>
+      <div class="timeline">
+        <article class="job reveal">
+          <div class="job-meta">
+            <span class="job-period">5 months</span>
+            <span class="job-place">Remote</span>
+          </div>
+          <div>
+            <h3>Virtual Assistant / Social Media Coordinator</h3>
+            <p class="job-company">Goodwill Caring Healthcare Services</p>
+            <ul>
+              <li>Planned and maintained a Facebook content schedule of educational posts to attract clients and caregivers across elderly, perinatal, pediatric, and respite care.</li>
+              <li>Created a pinned brand-reference post from company materials to keep future content consistent.</li>
+              <li>Organized content calendars and coordinated posting tasks independently.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-meta">
+            <span class="job-period">Feb 2026 – May 2026</span>
+            <span class="job-place">Remote</span>
+          </div>
+          <div>
+            <h3>Appointment Setter / Cold Caller</h3>
+            <p class="job-company">Salary.com</p>
+            <ul>
+              <li>Managed outbound outreach and lead qualification, coordinating call schedules and follow-ups independently.</li>
+              <li>Kept accurate records of prospect and client communications.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-meta">
+            <span class="job-period">Aug 2025 – Mar 2026</span>
+            <span class="job-place">Davao City</span>
+          </div>
+          <div>
+            <h3>Customer Service Representative</h3>
+            <p class="job-company">VXI Global Solutions</p>
+            <ul>
+              <li><strong>DoorDash NLP:</strong> live and non-live support for delivery partners, covering application status, account setup, access, and deactivation appeals.</li>
+              <li><strong>AT&amp;T MSS:</strong> billing inquiries, basic troubleshooting, and plan and service changes with accurate account records.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-meta">
+            <span class="job-period">Jul 2024 – Oct 2024</span>
+            <span class="job-place">Davao City</span>
+          </div>
+          <div>
+            <h3>Intern</h3>
+            <p class="job-company">Civil Aviation Authority of the Philippines, Davao International Airport</p>
+            <ul>
+              <li>Supported day-to-day airport office operations and administrative tasks during the internship period.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">04 — How I work</p>
+          <h2>A simple rhythm.<br><em>Consistent results.</em></h2>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <h3>I learn your professional goals.</h3>
+            <p>We start with what matters to you — your priorities, your busiest hours, and the tasks you want off your plate.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">02</span>
+            <h3>We set a schedule that works for both of us.</h3>
+            <p>Clear expectations, agreed working hours, and a communication rhythm that fits your timezone and workflow.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">03</span>
+            <h3>I help you do better work.</h3>
+            <p>You get reliable support, organized systems, and more room to focus on the parts of your business only you can do.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="services">
+      <div class="section-head reveal">
+        <p class="eyebrow">05 — Services</p>
+        <h2>What I can do <em>for you.</em></h2>
+      </div>
+      <div class="services">
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+          </span>
+          <h3>Administrative Support</h3>
+          <p>Efficiently manage administrative tasks such as email and calendar management, data entry, document organization, scheduling appointments, and general correspondence. Bring organization and streamline processes to enhance productivity.</p>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg>
+          </span>
+          <h3>AI Video Generation</h3>
+          <p>I help businesses create engaging AI-powered video content for social media, marketing campaigns, product promotions, and short-form content. I assist with developing video concepts, writing scripts, generating AI visuals and voiceovers, assembling videos, and preparing content for publishing.</p>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
+          </span>
+          <h3>Social Media Support</h3>
+          <p>Content calendars, educational post planning, and brand-reference posts for business pages, as done for a home health care agency.</p>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </span>
+          <h3>Technical Support</h3>
+          <p>Proficient in a range of digital tools for administrative tasks, communication, data management, scheduling, documentation, and content creation. Experienced with Google Workspace, Canva, Zoom, and CRM platforms, with the ability to quickly adapt to new software and workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="packages">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">06 — Packages</p>
+          <h2>Flexible support.<br><em>Fair pricing.</em></h2>
+        </div>
+        <div class="plans">
+          <article class="plan reveal">
+            <p class="plan-name">Hourly Support</p>
+            <p class="plan-price">$4<span>/hour</span></p>
+            <p class="plan-note">Per hour</p>
+            <ul>
+              <li>Flexible assistance when you need an extra hand</li>
+              <li>Ideal for one-time projects</li>
+              <li>Administrative tasks</li>
+            </ul>
+            <a class="btn btn-ghost" href="mailto:justineusmanp@gmail.com?subject=Hourly%20Support%20Inquiry">Choose hourly</a>
+          </article>
+
+          <article class="plan plan-featured reveal">
+            <span class="plan-badge">Most chosen</span>
+            <p class="plan-name">Part-Time Support</p>
+            <p class="plan-price">$200<span>/week</span></p>
+            <p class="plan-note">Up to 20 hours per week</p>
+            <ul>
+              <li>Consistent support for day-to-day store operations</li>
+              <li>Assistance with administrative tasks, product updates, customer service, and reporting</li>
+              <li>Regular communication and progress updates</li>
+            </ul>
+            <a class="btn btn-light" href="mailto:justineusmanp@gmail.com?subject=Part-Time%20Support%20Inquiry">Choose part-time</a>
+          </article>
+
+          <article class="plan reveal">
+            <p class="plan-name">Dedicated Support</p>
+            <p class="plan-price">$500<span>/week</span></p>
+            <p class="plan-note">Up to 40 hours per week</p>
+            <ul>
+              <li>Ongoing support across multiple areas of your business</li>
+              <li>Administrative tasks, customer support, product maintenance, and operational tasks</li>
+              <li>Integrated into your workflow as a dedicated team member</li>
+            </ul>
+            <a class="btn btn-ghost" href="mailto:justineusmanp@gmail.com?subject=Dedicated%20Support%20Inquiry">Choose dedicated</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="references">
+      <div class="section-head reveal">
+        <p class="eyebrow">07 — References</p>
+        <h2>People I've <em>worked with.</em></h2>
+      </div>
+      <div class="refs">
+        <article class="ref reveal">
+          <div class="ref-top">
+            <span class="ref-initials" aria-hidden="true">KD</span>
+            <div>
+              <h3>Kilven Dinapo</h3>
+              <p class="ref-role">Team Leader</p>
+            </div>
+          </div>
+          <a href="mailto:1kilvenboniel9172@gmail.com">1kilvenboniel9172@gmail.com</a>
+        </article>
+        <article class="ref reveal">
+          <div class="ref-top">
+            <span class="ref-initials" aria-hidden="true">JC</span>
+            <div>
+              <h3>Josefh Cruza</h3>
+              <p class="ref-role">Team Leader</p>
+            </div>
+          </div>
+          <a href="mailto:thelongwaydownjosefh@gmail.com">thelongwaydownjosefh@gmail.com</a>
+        </article>
+        <article class="ref reveal">
+          <div class="ref-top">
+            <span class="ref-initials" aria-hidden="true">JS</span>
+            <div>
+              <h3>Justine Salon</h3>
+              <p class="ref-role">Change Leader</p>
+            </div>
+          </div>
+          <a href="mailto:j.maciadosalon@gmail.com">j.maciadosalon@gmail.com</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="contact">
+      <div class="contact-panel reveal">
+        <p class="eyebrow"><span class="dot"></span> 08 — Contact</p>
+        <h2>Let's make your days<br><em>lighter.</em></h2>
+        <p>Have a project, a backlog, or a content calendar that needs a hand? I'd love to hear about it. Send me a note and I'll reply within 24 hours.</p>
+        <div class="contact-actions">
+          <a class="btn btn-light" href="mailto:justineusmanp@gmail.com">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            justineusmanp@gmail.com
+          </a>
+          <span class="contact-note">Open to remote work worldwide</span>
+        </div>
+        <div class="contact-socials">
+          <a href="https://instagram.com/kozocx" target="_blank" rel="noopener">Instagram — @kozocx</a>
+          <span>Facebook — Justine Usman</span>
+          <a href="mailto:justineusmanp@gmail.com">Email — justineusmanp@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Justine Usman · Administrative Assistant &amp; AI Video Generator</p>
+      <div class="footer-links">
+        <a href="/resume.md">Original résumé (.md)</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      items.forEach((item) => observer.observe(item));
+    } else {
+      items.forEach((item) => item.classList.add('in'));
+    }
+  </script>
+</body>
+</html>
